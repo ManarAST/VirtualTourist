@@ -1,9 +1,9 @@
 # VirtualTourist
-===============
+_______________
 
 ## Description:
 an app that help the user see pics of the location he or she wants (a udacity project)
-------------
+
 
 ## How to run: 
 1. make sure that you have xcode program if not downlaod it first
@@ -12,7 +12,6 @@ an app that help the user see pics of the location he or she wants (a udacity pr
 4. open the .xcodeproject file
 5. press the run button.
 6. enjoy
-_______________
 
 
 ## How to use" 
