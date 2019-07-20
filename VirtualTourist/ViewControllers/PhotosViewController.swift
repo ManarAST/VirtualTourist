@@ -136,11 +136,19 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate,  UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let photo = fetchedResultsController.object(at: indexPath)
+        let alert = UIAlertController(title: "Are you sure?", message: "This will deletet the photo permanently!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action) in
+            self.deletePhoto(at: indexPath)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func deletePhoto (at index: IndexPath) {
+        let photo = fetchedResultsController.object(at: index)
         context.delete(photo)
         try? context.save()
     }
-    
    
     
     //    MARK: NSFetchedResultsControllerDelegate
